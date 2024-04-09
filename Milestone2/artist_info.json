@@ -1,0 +1,68 @@
+{
+    "artist_info": [
+      {
+        "id": 1,
+        "full_name": "Olivia Isabel Rodrigo",
+        "country": "United States",
+        "birthdate": "2003-02-20",
+        "albums": ["SOUR"]
+      },
+      {
+        "id": 2,
+        "full_name": "Abel Makkonen Tesfaye",
+        "country": "Canada",
+        "birthdate": "1990-02-16",
+        "albums": ["After Hours", "Starboy", "Beauty Behind the Madness"]
+      },
+      {
+        "id": 3,
+        "full_name": "Montero Lamar Hill",
+        "country": "United States",
+        "birthdate": "1999-04-09",
+        "albums": ["Montero"]
+      },
+      {
+        "id": 4,
+        "full_name": "Aubrey Drake Graham",
+        "country": "Canada",
+        "birthdate": "1986-10-24",
+        "albums": ["Certified Lover Boy", "Scorpion", "Views"]
+      },
+      {
+        "id": 5,
+        "full_name": "Edward Christopher Sheeran",
+        "country": "United Kingdom",
+        "birthdate": "1991-02-17",
+        "albums": ["÷", "x", "+", "No.6 Collaborations Project"]
+      },
+      {
+           "id": 6,
+          "full_name": "Andrew Taggart",
+          "country": "United States",
+          "birthdate":"1979-10-12",
+          "albums": ["World War Joy", "Memories...Do Not Open", "Sick Boy"]
+      },
+      {
+        "id": 7,
+        "full_name": "Cameron Jibril Thomaz",
+        "country": "United States",
+        "birthdate": "1987-09-08", 
+        "albums": ["Furious 7: Original Motion Picture Soundtrack", "Khalifa", "Blacc Hollywood", "Nine Track Mind"]
+      },
+      {
+        "id": 8,
+        "full_name": "Mark Daniel Ronson",
+        "country": "United Kingdom",
+        "birthdate": "1975-09-04", 
+        "albums": ["Late Night Feelings", "Uptown Special", "Version", "Doo-Wops & Hooligans", "Unorthodox Jukebox"]
+      },
+      {
+        "id": 9,
+        "full_name": "Taylor Alison Swift",
+        "country": "United States",
+        "birthdate": "1989-12-13",
+        "albums": ["Red (Taylor's Version)", "evermore", "folklore", "Lover", "Reputation"]
+      }
+    ]
+  }
+  

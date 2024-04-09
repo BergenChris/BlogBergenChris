@@ -1,0 +1,24 @@
+<%-include ("partials/header")%>
+<table>
+    <thead>
+        <tr>
+            <th>Titel</th>
+            <th>Artiest</th>
+            <th>Afbeelding</th>
+            <th>Weken nr1</th>
+            <th>Jaar</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% for (let i=1;i<songs.length;i++) {%>
+        <tr>
+            <td><%=songs[i].title%></td>
+            <td><%=songs[i].artist%></td>
+            <td><img src="<%=songs[i].image_url%>" ><%=songs[i].image_url%></td>
+            <td><%=songs[i].weeks_at_number_one%></td>
+            <td><%=songs[i].year%></td>
+        </tr>
+        <%}%>
+    </tbody>
+</table>
+<%-include ("partials/footer")%>
