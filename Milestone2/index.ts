@@ -27,7 +27,7 @@ app.get("/",(req,res)=>{
 
 
 app.listen(app.get("port"), async () => {
-    let response:Response = await fetch("https://raw.githubusercontent.com/BergenChris/Milestone/main/Milestone1/songs.json");
+    let response:Response = await fetch("https://raw.githubusercontent.com/BergenChris/Milestone/main/Milestone2/songs.json");
     songlist= await response.json();
     console.log( "[server] http://localhost:" + app.get("port"));
   });

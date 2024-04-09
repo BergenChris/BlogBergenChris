@@ -4,7 +4,7 @@ import {Songs} from "./interfaces/songs";
 let songlist:Songs[]=[];
 async function importJson()
 {
-        let response:Response = await fetch("https://raw.githubusercontent.com/BergenChris/Milestone/main/Milestone1/songs.json");
+        let response:Response = await fetch("https://raw.githubusercontent.com/BergenChris/Milestone/main/Milestone2/songs.json");
         songlist= await response.json();
         return songlist;
     
