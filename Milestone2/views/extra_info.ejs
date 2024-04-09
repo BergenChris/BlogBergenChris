@@ -1,0 +1,26 @@
+<%-include ("partials/header")%>
+<form  method="POST">
+    <label for="q">Zoek op Artiest: </label>
+    <select  name="q">
+        <% for(let i=0;i<list.length;i++) {%>
+        <option value="<%=list[i]%>"><%=list[i]%></option>
+        <%}%>
+    </select>
+    <button type="submit">Zoek</button>
+</form>
+<h1><%=data.artist%></h1>
+<figure class="col-6 float-start" ><img class="img-fluid" src="<%=data.image_url%>" height="450px"></figure>
+<ul class="text-start col-6 float-end mx-auto">
+    <li>Echte naam: <%=data.artist_info.full_name%></li>
+    <li>Land: <%=data.artist_info.country%></li>
+    <li>Geboren op <%=data.artist_info.birthdate%></li>
+    <li>Albums:</li>
+    <ul>
+    <% for (let i=0;i<data.artist_info.albums.length;i++) {%>
+        <li><%=data.artist_info.albums[i]%></li>
+        <%}%>
+    </ul>
+
+</ul>
+
+<%-include ("partials/footer")%>
