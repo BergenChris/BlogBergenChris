@@ -1,0 +1,13 @@
+<%-include ("partials/header")%>
+<form  method="POST">
+    <label for="q">Zoek op tekst titel of refrein: </label><br>
+    <input type="search" name="q" id="q" value="<%=q%>"/>
+    <button type="submit">Zoek</button>
+</form>
+<ol class="col-6 mx-auto text-center">
+<% for (let i=0;i<data.length;i++) {%>
+    <li><%=data[i].artist%> : <%=data[i].title%> <button>EDIT</button></li> 
+<%}%>
+</ol>      
+
+<%-include ("partials/footer")%>

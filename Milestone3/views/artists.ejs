@@ -1,0 +1,12 @@
+<%-include ("partials/header")%>
+<form  method="POST">
+    <label for="q">Zoek op Artiest: </label>
+    <input type="search" name="q" id="q" value="<%=q%>"/>
+    <button type="submit">Zoek</button>
+</form>
+<% for (let i=0;i<data.length;i++) {%>
+    <figure><a href="/artist/<%=data[i].artist_info.id%>"><img src="<%=data[i].image_url%>" height="150px"><figcaption><%=data[i].artist%></figcaption></a></figure>
+<%}%>
+        
+
+<%-include ("partials/footer")%>

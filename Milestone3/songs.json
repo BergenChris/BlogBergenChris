@@ -1,0 +1,204 @@
+[
+      {
+        "id": "12021",
+        "title": "Drivers License",
+        "artist": "Olivia Rodrigo",
+        "image_url": "https://raw.githubusercontent.com/BergenChris/Milestone/main/Milestone1/images/Olivia_Rodrigo.jpg",	
+        "artist_info": {
+          "id": 1,
+          "full_name": "Olivia Isabel Rodrigo",
+          "country": "United States",
+          "birthdate": "2003-02-20",
+          "albums": ["SOUR"]
+        },
+        "year": 2021,
+        "release_date": "2021-01-08",
+        "weeks_at_number_one": 8,
+        "chorus": "And I just can't imagine how you could be so okay now that I'm gone",
+        "number_1_in_UK": true,
+        "genre": "POP",
+        "other_top_songs": ["good 4 u", "deja vu", "brutal", "traitor", "enough for you"]
+      },
+      {
+        "id": "472020",
+        "title": "Blinding Lights",
+        "artist": "The Weeknd",
+        "image_url": "https://raw.githubusercontent.com/BergenChris/Milestone/main/Milestone1/images/The_Weeknd.jpg",
+        "artist_info": {
+          "id": 2,
+          "full_name": "Abel Makkonen Tesfaye",
+          "country": "Canada",
+          "birthdate": "1990-02-16",
+          "albums": ["After Hours", "Starboy", "Beauty Behind the Madness"]
+        },
+        "year": 2020,
+        "release_date": "2019-11-29",
+        "weeks_at_number_one": 4,
+        "chorus": "I'm blinded by the lights, No, I can't sleep until I feel your touch",
+        "number_1_in_UK": true,
+        "genre": "POP",
+        "other_top_songs": ["Save Your Tears", "Starboy", "Can't Feel My Face", "Heartless", "The Hills"]
+      },
+      {
+        "id": "502019",
+        "title": "Old Town Road",
+        "artist": "Lil Nas X",
+        "image_url": "https://raw.githubusercontent.com/BergenChris/Milestone/main/Milestone1/images/Lil_Nas_X.png",
+        "artist_info": {
+          "id": 3,
+          "full_name": "Montero Lamar Hill",
+          "country": "United States",
+          "birthdate": "1999-04-09",
+          "albums": ["Montero"]
+        },
+        "year": 2019,
+        "release_date": "2018-12-03",
+        "weeks_at_number_one": 19,
+        "chorus": "Yeah, I'm gonna take my horse to the old town road, I'm gonna ride 'til I can't no more",
+        "number_1_in_UK": true,
+        "genre": "HIP_HOP",
+        "other_top_songs": ["Montero (Call Me by Your Name)", "Panini", "Holiday", "Rodeo", "Sun Goes Down"]
+      },
+      {
+        "id": "422018",
+        "title": "God's Plan",
+        "artist": "Drake",
+        "image_url": "https://raw.githubusercontent.com/BergenChris/Milestone/main/Milestone1/images/Drake.jpg",
+        "artist_info": {
+          "id": 4,
+          "full_name": "Aubrey Drake Graham",
+          "country": "Canada",
+          "birthdate": "1986-10-24",
+          "albums": ["Certified Lover Boy", "Scorpion", "Views"]
+        },
+        "year": 2018,
+        "release_date": "2018-01-19",
+        "weeks_at_number_one": 11,
+        "chorus": "God's plan, God's plan, I hold back, sometimes I won't",
+        "number_1_in_UK": true,
+        "genre": "HIP_HOP",
+        "other_top_songs": ["In My Feelings", "Nice for What", "Hotline Bling", "One Dance", "Started From the Bottom"]
+      },
+      {
+        "id": "012017",
+        "title": "Shape of You",
+        "artist": "Ed Sheeran",
+        "image_url": "https://raw.githubusercontent.com/BergenChris/Milestone/main/Milestone1/images/Ed_Sheeran.jpg",
+        "artist_info": {
+          "id": 5,
+          "full_name": "Edward Christopher Sheeran",
+          "country": "United Kingdom",
+          "birthdate": "1991-02-17",
+          "albums": ["÷", "x", "+", "No.6 Collaborations Project"]
+        },
+        "year": 2017,
+        "release_date": "2017-01-06",
+        "weeks_at_number_one": 12,
+        "chorus": "I'm in love with the shape of you, We push and pull like a magnet do",
+        "number_1_in_UK": true,
+        "genre": "POP",
+        "other_top_songs": ["Thinking Out Loud", "Perfect", "Castle on the Hill", "Photograph", "Galway Girl"]
+      },
+      {
+        "id": "302016",
+        "title": "Closer",
+        "artist": "The Chainsmokers",
+        "image_url": "https://raw.githubusercontent.com/BergenChris/Milestone/main/Milestone1/images/The_Chainsmokers.jpg",
+        "artist_info": {
+          "id": 6,
+          "full_name": "Andrew Taggart ",
+          "country": "United States",
+          "birthdate": "1979-10-12",
+          "albums": ["World War Joy", "Memories...Do Not Open", "Sick Boy"]
+        },
+        "year": 2016,
+        "release_date": "2016-07-29",
+        "weeks_at_number_one": 12,
+        "chorus": "So baby pull me closer in the backseat of your Rover, That I know you can't afford",
+        "number_1_in_UK": true,
+        "genre": "ELECTRONIC",
+        "other_top_songs": ["Don't Let Me Down", "Paris", "Something Just Like This", "Roses", "All We Know"]
+      },
+      {
+        "id": "252015",
+        "title": "Can't Feel My Face",
+        "artist": "The Weeknd",
+        "image_url": "https://raw.githubusercontent.com/BergenChris/Milestone/main/Milestone1/images/The_Weeknd.jpg",
+        "artist_info": {
+            "id": 7,
+            "full_name": "Abel Makkonen Tesfaye",
+            "country": "Canada",
+            "birthdate": "1990-02-16",
+            "albums": ["After Hours", "Starboy", "Beauty Behind the Madness"]
+          },
+        "year": 2015,
+        "release_date": "2015-06-08",
+        "weeks_at_number_one": 3,
+        "chorus": "I can't feel my face when I'm with you, But I love it, but I love it, oh",
+        "number_1_in_UK": true,
+        "genre": "POP",
+        "other_top_songs": ["Save Your Tears", "Starboy", "Blinding Lights", "Heartless", "The Hills"]
+      },
+      {
+        "id": "022015",
+        "title": "See You Again",
+        "artist": "Wiz Khalifa",
+        "image_url": "https://raw.githubusercontent.com/BergenChris/Milestone/main/Milestone1/images/Wiz_Khalifa.jpg",
+        "artist_info": {
+          "id": 8,
+          "full_name": "Cameron Jibril Thomaz ",
+          "country": "United States",
+          "birthdate": "1987-09-08",
+          "albums": ["Furious 7: Original Motion Picture Soundtrack", "Khalifa", "Blacc Hollywood", "Nine Track Mind"]
+        },
+        "year": 2015,
+        "release_date": "2015-03-17",
+        "weeks_at_number_one": 12,
+        "chorus": "It's been a long day without you, my friend, And I'll tell you all about it when I see you again",
+        "number_1_in_UK": true,
+        "genre": "HIP_HOP",
+        "other_top_songs": ["Black and Yellow", "Young, Wild & Free", "Work Hard, Play Hard", "Roll Up", "We Dem Boyz"]
+      },
+      {
+        "id": "112015",
+        "title": "Uptown Funk",
+        "artist": "Mark Ronson",
+        "image_url": "https://raw.githubusercontent.com/BergenChris/Milestone/main/Milestone1/images/Mark-Ronson.jpg",
+        "artist_info": {
+          "id": 9,
+          "full_name": "Mark Daniel Ronson,",
+          "country": "United Kingdom",
+          "birthdate": "1975-09-04",
+          "albums": ["Late Night Feelings", "Uptown Special", "Version", "Doo-Wops & Hooligans", "Unorthodox Jukebox"]
+        },
+        "year": 2015,
+        "release_date": "2014-11-10",
+        "weeks_at_number_one": 14,
+        "chorus": "Don't believe me, just watch, Don't believe me, just watch, hey hey hey oh",
+        "number_1_in_UK": true,
+        "genre": "POP",
+        "other_top_songs": ["Nothing Breaks Like a Heart", "Valerie", "Ooh Wee", "Stop Me", "Bang Bang Bang"]
+      },
+      {
+        "id": "112014",
+        "title": "Blank Space",
+        "artist": "Taylor Swift",
+        "image_url": "https://raw.githubusercontent.com/BergenChris/Milestone/main/Milestone1/images/Taylor_Swift.png",
+        "artist_info": {
+          "id": 10,
+          "full_name": "Taylor Alison Swift",
+          "country": "United States",
+          "birthdate": "1989-12-13",
+          "albums": ["Red (Taylor's Version)", "evermore", "folklore", "Lover", "Reputation"]
+        },
+        "year": 2014,
+        "release_date": "2014-11-10",
+        "weeks_at_number_one": 7,
+        "chorus": "'Cause darling I'm a nightmare dressed like a daydream, So it's gonna be forever",
+        "number_1_in_UK": true,
+        "genre": "POP",
+        "other_top_songs": ["Shake It Off", "Love Story", "You Belong with Me", "Bad Blood", "22"]
+      }
+    ]
+
+  

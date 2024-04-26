@@ -1,0 +1,34 @@
+<%-include ("partials/header")%>
+<form  method="POST">
+    <label for="q">Zoek op Artiest: </label>
+    <select  name="q">
+        <% for(let i=0;i<list.length;i++) {%>
+        <option value="<%=list[i]%>"><%=list[i]%></option>
+        <%}%>
+    </select>
+    <button type="submit">Zoek</button>
+</form>
+<h1><%=data.artist%></h1>
+<figure class="col-6 float-start"><img class="img-fluid" src="<%=data.image_url%>" height="450px"></figure>
+<ul class="text-start col-6 float-end mx-auto">
+    <li>Jaar: <%=data.year%></li>
+    <li>Uitgebracht op <%=data.release_date%></li>
+    <li>Weken op nr 1 = <%=data.weeks_at_number_one%></li>
+    <li>Ook op nr 1 in het Verenigd Koninkrijk : <% if (data.number_1_in_UK == true) { %> Ja <%} else {%>Nee<%}%></li>
+    <li>Genre : <%=data.genre%></li>
+    <li>Andere hits:</li>
+    <ul>
+    <% for (let i=0;i<data.other_top_songs.length;i++) {%>
+    <li><%=data.other_top_songs[i]%></li>
+    <%}%>
+    </ul>
+    <li>Refrein :</li> 
+    <p><%=data.chorus%></p>
+    <button><a href="http://localhost:3000/artist/<%=data.artist_info.id%>/extra_info">Overige Info</a></button>
+    
+
+        
+</ul>
+
+
+<%-include ("partials/footer")%>

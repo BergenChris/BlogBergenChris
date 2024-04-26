@@ -1,0 +1,37 @@
+<%-include ("partials/header")%>
+<form action="/" method="get">
+    <select name="sortField">
+        <% for (let field of sortFields) { %>
+            <option value="<%= field.value %>" <%= field.selected %>><%= field.text %></option> 
+        <% } %>
+    </select>
+    <select name="sortDirection">
+        <% for (let direction of sortDirections) { %>
+            <option value="<%= direction.value %>" <%= direction.selected %>><%= direction.text %></option> 
+        <% } %>
+    </select>
+    <button type="submit">Sort</button>
+</form>
+<table>
+    <thead>
+        <tr>
+            <th>Artiest</th>
+            <th>Titel</th>
+            <th>Genre</th>
+            <th>Weken nr1</th>
+            <th>Jaar</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% for (let i=0;i<songs.length;i++) {%>
+        <tr>
+            <td style="border: 1px solid black;text-align: center;"><a style="color:black;text-decoration: underline;" href="http://localhost:3000/artist/<%=songs[i].artist_info.id%>"><%=songs[i].artist%></a></td>
+            <td style="color:red ;border: 1px solid black;text-align: center;" ><%=songs[i].title%></td>
+            <td style="border: 1px solid black;text-align: center;"><%=songs[i].genre%></td>
+            <td style="border: 1px solid black;text-align: center;"><%=songs[i].weeks_at_number_one%></td>
+            <td style="border: 1px solid black;text-align: center;"><%=songs[i].year%></td>
+        </tr>
+        <%}%>
+    </tbody>
+</table>
+<%-include ("partials/footer")%>
