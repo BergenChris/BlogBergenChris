@@ -277,14 +277,14 @@ app.get("/songs/:id/update",async(req,res)=>
 
 app.post("/songs/:id/update",async(req,res)=>
     {
-        let id:string=req.params.id;
+        let idsong:string=req.params.id;
         let song:Songs|null = req.body;
         if (!song)
         {
             res.redirect("/songs");
             return;
         }
-        await updateSong(id,song);
+        await updateSong(idsong,song);
         res.redirect("/");     
         
     })
