@@ -1,8 +1,8 @@
 
 import express  from "express";
-import {Songs} from "./interfaces/songs";
+import {Songs,Genre} from "./interfaces/songs";
 import ejs from "ejs";
-import { connect,getSongs } from "./database";
+import { connect,getSongs,getSongById,updateSong} from "./database";
 
 
 const app = express();
@@ -22,11 +22,15 @@ let artists:string[]=[];
 app.get("/", async (req,res)=>
     {
         songlist = await getSongs();
-        const sortField = typeof req.query.sortField === "string" ? req.query.sortField : "artiest";
+        const sortField = typeof req.query.sortField === "string" ? req.query.sortField : "id";
         const sortDirection = typeof req.query.sortDirection === "string" ? req.query.sortDirection : "a-z laag-hoog";
         let sortedSonglist=[...songlist].sort((a,b)=>
         {
-            if (sortField ==="titel")
+            if (sortField ==="id")
+            {
+                return sortDirection==="a-z laag-hoog"?a.id.localeCompare(b.id) : b.id.localeCompare(a.id);
+            }
+            else if (sortField ==="titel")
             {
                 return sortDirection==="a-z laag-hoog"?a.title.localeCompare(b.title) : b.title.localeCompare(a.title);
             }
@@ -64,6 +68,7 @@ app.get("/", async (req,res)=>
     
         const sortFields = 
         [
+            { value: 'id', text: 'Id', selected: sortField === 'id' ? 'selected' : ''},
             { value: 'artiest', text: 'Artiest', selected: sortField === 'artiest' ? 'selected' : ''},
             { value: 'titel', text: 'Titel', selected: sortField === 'titel' ? 'selected' : '' },
             { value: 'genre', text: 'Genre', selected: sortField === 'genre' ? 'selected' : ''},
@@ -143,12 +148,12 @@ app.post("/artists",(req,res)=>
 ///artist
 app.get("/artist/:id",(req,res)=>
     {
-        let search:number = parseInt(req.params.id);
+        let search:string = req.params.id;
 
         let found:boolean=false;
         for (let i:number=0;i<songlist.length;i++)
             {
-                if (songlist[i].artist_info.id==search)
+                if (songlist[i].artist_info.artistid==search)
                     {
                         found=true;
                         res.render("artist",
@@ -168,11 +173,11 @@ app.get("/artist/:id",(req,res)=>
 
     app.get("/artist/:id/extra_info",(req,res)=>
         {
-            let search:number = parseInt(req.params.id);
+            let search:string = req.params.id;
             let found:boolean=false;
             for (let i:number=0;i<songlist.length;i++)
                 {
-                    if (songlist[i].artist_info.id==search)
+                    if (songlist[i].artist_info.artistid==search)
                         {
                             found=true;
                             res.render("extra_info",
@@ -252,14 +257,37 @@ app.post("/songs",(req,res)=>
     )
 })
 
+app.get("/songs/:id/update",async(req,res)=>
+{
+    let id:string=req.params.id;
+    let song:Songs|null = await getSongById(id);
+    if (!song)
+    {
+        res.redirect("/songs");
+        return;
+    }
+    let genres:Genre[]=["COUNTRY","EDM","FUNK","HIP_HOP","POP","RNB"];
+    res.render("songs/update",
+        {
+            genres:genres,
+            song:song,
+        }
+    );
+})
 
-
-
-
-
-  
-
-
+app.post("/songs/:id/update",async(req,res)=>
+    {
+        let id:string=req.params.id;
+        let song:Songs|null = req.body;
+        if (!song)
+        {
+            res.redirect("/songs");
+            return;
+        }
+        await updateSong(id,song);
+        res.redirect("/");     
+        
+    })
 
 app.listen(app.get("port"), async () => {
     await connect();

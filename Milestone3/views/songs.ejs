@@ -6,7 +6,7 @@
 </form>
 <ol class="col-6 mx-auto text-center">
 <% for (let i=0;i<data.length;i++) {%>
-    <li><%=data[i].artist%> : <%=data[i].title%> <button>EDIT</button></li> 
+    <li><%=data[i].artist%> : <%=data[i].title%> <button><a href="/songs/<%=data[i].id%>/update">EDIT</a></button></li> 
 <%}%>
 </ol>      
 

@@ -1,0 +1,37 @@
+<%-include ("./../partials/header")%>
+
+<h1><%=song.artist%></h1>
+<figure class="col-6 float-start"><img class="img-fluid" src="<%=song.image_url%>" height="450px"></figure>
+<section class="text-start col-6 float-end mx-auto">
+<form action="/songs/:<%=song.id%>/update" method="POST">
+    <label for="year">Jaar :</label>
+        <input type="number" name ="year" value="<%=song.year%>" required>
+    <br>
+    <label for="release">Uitgebracht op :</label>
+        <input type="text" name="release_date" value="<%=song.release_date%>">
+    <br>
+    <label  for="weeks1">Weken op nr 1 :</label>
+        <input type="number" name="weeks_at_number_one" value="<%=song.weeks_at_number_one%>">
+    <br>
+    <label for="genre">Genre : <%=song.genre%></label>
+        <select name="genre" >
+            <option value="">-Kies Genre-</option>
+            <% for(let genre of genres) {%>
+                <option value="<%=genre%>" <% if(genre == song.genre) {%> selected <%}%>}><%=genre%></option>
+            <%}%>
+        </select>
+    <br>
+    <input class="visually-hidden" name="id" value="<%=song.id%>">
+    <p><%=song.id%></p>
+    <input class="visually-hidden" name="title" value="<%=song.title%>">
+    <input class="visually-hidden" name="artist" value="<%=song.artist%>">
+    <input class="visually-hidden" name="image_url" value="<%=song.image_url%>">
+    <input class="visually-hidden" name="artist_info" value="<%=song.artist_info%>">
+    <input class="visually-hidden" name="number_1_in_UK" value="<%=song.number_1_in_UK%>">
+    <input class="visually-hidden" name="other_top_songs" value="<%=song.other_top_songs%>">
+    <input class="visually-hidden" name="chorus" value="<%=song.chorus%>">
+    <input  type="submit" value="Submit">
+</form>
+
+</section>
+<%-include ("./../partials/footer")%>

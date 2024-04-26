@@ -4,7 +4,7 @@ import {Songs} from "./interfaces/songs";
 let songlist:Songs[]=[];
 async function importJson()
 {
-        let response:Response = await fetch("https://raw.githubusercontent.com/BergenChris/Milestone/main/Milestone2/songs.json");
+        let response:Response = await fetch("https://raw.githubusercontent.com/BergenChris/Milestone/main/Milestone3/songs.json");
         songlist= await response.json();
         return songlist;
     
@@ -57,7 +57,7 @@ importJson().then(songlist =>
                 let found : boolean =false
                 for (let i:number=0;i<songlist.length;i++)
                 {
-                    if(songlist[i].id == searchById)
+                    if(songlist[i].id == parseInt(searchById))
                     {
                         found=true;
                         console.log("Id : "+songlist[i].id);

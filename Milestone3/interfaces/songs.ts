@@ -14,9 +14,10 @@ export interface Songs
         other_top_songs: string[]
 }
 
+
 export interface Artist_info 
 {
-    id:number,
+    artistid:string,
     full_name: string,
     country: string,
     birthdate: string,
