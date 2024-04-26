@@ -3,7 +3,7 @@
 <h1><%=song.artist%></h1>
 <figure class="col-6 float-start"><img class="img-fluid" src="<%=song.image_url%>" height="450px"></figure>
 <section class="text-start col-6 float-end mx-auto">
-<form action="/songs/:<%=song.id%>/update" method="POST">
+<form action="/songs/<%=song.id%>/update" method="POST">
     <label for="year">Jaar :</label>
         <input type="number" name ="year" value="<%=song.year%>" required>
     <br>

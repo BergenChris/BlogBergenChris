@@ -30,7 +30,7 @@ export async function getSongById(id:string)
 
 export async function updateSong(id:string,song:Songs):Promise<UpdateResult<Songs>>
 {
-    return await collection.updateOne({ id : id.substring(1) }, { $set:  song });   
+    return await collection.updateOne({ id : id }, { $set:  song });   
 }
 export async function fillDB()
 {
