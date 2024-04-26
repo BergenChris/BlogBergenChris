@@ -1,6 +1,6 @@
 [
       {
-        "id": "12021",
+        "id": 1,
         "title": "Drivers License",
         "artist": "Olivia Rodrigo",
         "image_url": "https://raw.githubusercontent.com/BergenChris/Milestone/main/Milestone1/images/Olivia_Rodrigo.jpg",	
@@ -20,7 +20,7 @@
         "other_top_songs": ["good 4 u", "deja vu", "brutal", "traitor", "enough for you"]
       },
       {
-        "id": "472020",
+        "id": 2,
         "title": "Blinding Lights",
         "artist": "The Weeknd",
         "image_url": "https://raw.githubusercontent.com/BergenChris/Milestone/main/Milestone1/images/The_Weeknd.jpg",
@@ -40,7 +40,7 @@
         "other_top_songs": ["Save Your Tears", "Starboy", "Can't Feel My Face", "Heartless", "The Hills"]
       },
       {
-        "id": "502019",
+        "id": 3,
         "title": "Old Town Road",
         "artist": "Lil Nas X",
         "image_url": "https://raw.githubusercontent.com/BergenChris/Milestone/main/Milestone1/images/Lil_Nas_X.png",
@@ -60,7 +60,7 @@
         "other_top_songs": ["Montero (Call Me by Your Name)", "Panini", "Holiday", "Rodeo", "Sun Goes Down"]
       },
       {
-        "id": "422018",
+        "id": 4,
         "title": "God's Plan",
         "artist": "Drake",
         "image_url": "https://raw.githubusercontent.com/BergenChris/Milestone/main/Milestone1/images/Drake.jpg",
@@ -80,7 +80,7 @@
         "other_top_songs": ["In My Feelings", "Nice for What", "Hotline Bling", "One Dance", "Started From the Bottom"]
       },
       {
-        "id": "012017",
+        "id": 5,
         "title": "Shape of You",
         "artist": "Ed Sheeran",
         "image_url": "https://raw.githubusercontent.com/BergenChris/Milestone/main/Milestone1/images/Ed_Sheeran.jpg",
@@ -100,7 +100,7 @@
         "other_top_songs": ["Thinking Out Loud", "Perfect", "Castle on the Hill", "Photograph", "Galway Girl"]
       },
       {
-        "id": "302016",
+        "id": 6,
         "title": "Closer",
         "artist": "The Chainsmokers",
         "image_url": "https://raw.githubusercontent.com/BergenChris/Milestone/main/Milestone1/images/The_Chainsmokers.jpg",
@@ -120,7 +120,7 @@
         "other_top_songs": ["Don't Let Me Down", "Paris", "Something Just Like This", "Roses", "All We Know"]
       },
       {
-        "id": "252015",
+        "id": 7,
         "title": "Can't Feel My Face",
         "artist": "The Weeknd",
         "image_url": "https://raw.githubusercontent.com/BergenChris/Milestone/main/Milestone1/images/The_Weeknd.jpg",
@@ -140,7 +140,7 @@
         "other_top_songs": ["Save Your Tears", "Starboy", "Blinding Lights", "Heartless", "The Hills"]
       },
       {
-        "id": "022015",
+        "id": 8,
         "title": "See You Again",
         "artist": "Wiz Khalifa",
         "image_url": "https://raw.githubusercontent.com/BergenChris/Milestone/main/Milestone1/images/Wiz_Khalifa.jpg",
@@ -160,7 +160,7 @@
         "other_top_songs": ["Black and Yellow", "Young, Wild & Free", "Work Hard, Play Hard", "Roll Up", "We Dem Boyz"]
       },
       {
-        "id": "112015",
+        "id": 9,
         "title": "Uptown Funk",
         "artist": "Mark Ronson",
         "image_url": "https://raw.githubusercontent.com/BergenChris/Milestone/main/Milestone1/images/Mark-Ronson.jpg",
@@ -180,7 +180,7 @@
         "other_top_songs": ["Nothing Breaks Like a Heart", "Valerie", "Ooh Wee", "Stop Me", "Bang Bang Bang"]
       },
       {
-        "id": "112014",
+        "id": 10,
         "title": "Blank Space",
         "artist": "Taylor Swift",
         "image_url": "https://raw.githubusercontent.com/BergenChris/Milestone/main/Milestone1/images/Taylor_Swift.png",
