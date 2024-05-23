@@ -1,8 +1,17 @@
 
 import express  from "express";
 import {Songs,Genre} from "./interfaces/songs";
+import {User} from "./interfaces/users";
 import ejs from "ejs";
-import { connect,getSongs,getSongById,updateSong} from "./database";
+import { connect,getSongs,getSongById,updateSong, login, createNewUser} from "./database";
+import session from "./session";
+import { secureMiddleware, secureMiddlewareAdmin } from "./secureMiddleware";
+
+
+
+
+
+
 
 
 const app = express();
@@ -10,6 +19,9 @@ const app = express();
 app.set("view engine", "ejs");
 app.set("port", 3000);
 
+
+
+app.use(session);
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
@@ -18,8 +30,11 @@ let songlist:Songs[]=[];
 let artists:string[]=[];
 
 
+
+
 // rootlocatie
-app.get("/", async (req,res)=>
+
+app.get("/", secureMiddleware, async(req, res) => 
     {
         songlist = await getSongs();
         const sortField = typeof req.query.sortField === "string" ? req.query.sortField : "id";
@@ -112,9 +127,65 @@ app.post("/",(req,res)=>
 
 })
 
+//login en logout
+app.get("/login", (req, res) => {
+    let message1 = {type: "Hey, ", message: "log je hier in aub"}
+    res.render("login",{
+        message: message1,
+    });
+});
+
+app.post("/login", async(req, res) => {
+    const email : string = req.body.email;
+    const password : string = req.body.password;
+    try {
+        let user : User = await login(email, password);
+        delete user.password; 
+        req.session.user = user;
+        res.redirect("/");
+    } catch (e : any) {
+        let message1 = {type: "Hey,", message: " er is iets fout gegaan."}
+        res.render("login",{
+            message:message1,
+        });
+    }
+});
+
+app.get("/logout", async(req, res) => {
+    req.session.destroy(() => {
+        res.redirect("/login");
+    });
+});
+
+
+//registreet
+
+app.get("/register", (req,res)=>{
+    res.render("register");
+})
+
+app.post("/register",async (req,res)=>{
+    const email : string = req.body.email;
+    const password : string = req.body.password;
+    try{
+        await createNewUser(email,password);
+        let message1 = {type: "Hey,", message: " registratie is gelukt. Log je nu in"}
+        res.render("login",{
+            message:message1,
+        });
+    
+    }
+    catch (e){
+        let message1 = {type: "Hey,", message: "gebruiker bestaat reeds"}
+        res.render("login",{
+            message:message1,
+        });
+    }
+})
+
 //artists 
 
-app.get("/artists",(req,res)=>
+app.get("/artists",secureMiddleware, (req,res)=>
 {
     res.render("artists",
         {
@@ -146,7 +217,7 @@ app.post("/artists",(req,res)=>
 
 
 ///artist
-app.get("/artist/:id",(req,res)=>
+app.get("/artist/:id",secureMiddleware,(req,res)=>
     {
         let search:string = req.params.id;
 
@@ -171,7 +242,7 @@ app.get("/artist/:id",(req,res)=>
         }
     });
 
-    app.get("/artist/:id/extra_info",(req,res)=>
+app.get("/artist/:id/extra_info",secureMiddleware,(req,res)=>
         {
             let search:string = req.params.id;
             let found:boolean=false;
@@ -195,7 +266,7 @@ app.get("/artist/:id",(req,res)=>
             }
         });
 
-app.get("/artist",(req,res)=>
+app.get("/artist",secureMiddleware,(req,res)=>
 {
     res.render("artist",
                     {
@@ -227,13 +298,15 @@ app.use("/artist",(req,res)=>
     });
  // songs
 
- app.get("/songs",(req,res)=>
+ app.get("/songs",secureMiddleware,(req,res)=>
 {
     let data:Songs[]=songlist;
+    let user = req.session.user;
     res.render("songs",
         {
             data:data,
-            q:""
+            q:"",
+            user:user
         }
     )
 })
@@ -242,6 +315,7 @@ app.post("/songs",(req,res)=>
 {
     let searchByTitle=req.body.q;
     let titleSongs:Songs[]=[];
+    let user = req.session.user;
     for( let i:number=0;i<songlist.length;i++)
         {
             if (songlist[i].title.toLowerCase().includes(searchByTitle.toLowerCase()) || songlist[i].chorus.toLowerCase().includes(searchByTitle.toLowerCase()))
@@ -252,16 +326,19 @@ app.post("/songs",(req,res)=>
         res.render("songs",
         {
             data:titleSongs,
-            q:searchByTitle
+            q:searchByTitle,
+            user:user
         }
     )
 })
 
-app.get("/songs/:id/update",async(req,res)=>
+app.get("/songs/:id/update",secureMiddlewareAdmin,async(req,res)=>
 {
     let id:string=req.params.id;
     let song:Songs|null = await getSongById(id);
-    if (!song)
+    let user = req.session.user;
+    console.log(user!.role);
+    if (!song )
     {
         res.redirect("/songs");
         return;
@@ -279,12 +356,13 @@ app.post("/songs/:id/update",async(req,res)=>
     {
         let idsong:string=req.params.id;
         let song:Songs|null = req.body;
-        if (!song)
+        let user = req.session.user;
+        if (!song && user!.role !=="ADMIN")
         {
             res.redirect("/songs");
             return;
         }
-        await updateSong(idsong,song);
+        await updateSong(idsong,song!);
         res.redirect("/");     
         
     })

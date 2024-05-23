@@ -1,5 +1,8 @@
+import { ObjectId } from "mongodb";
+
 export interface Songs 
 {
+        _id?: ObjectId;
         id: string,
         title: string,
         artist: string,
@@ -17,6 +20,7 @@ export interface Songs
 
 export interface Artist_info 
 {
+    _id?: ObjectId;
     artistid:string,
     full_name: string,
     country: string,
