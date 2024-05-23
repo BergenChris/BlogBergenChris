@@ -1,20 +1,27 @@
-
-<% if (message) { %>
-    <p class="<%= message.type %>"><%= message.message %></p>
-<% } %>    
-<form action="/login" method="post">
-        <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email"/>
+<%-include ("partials/header")%>
+<section class="col-12">
+    <form action="/login" method="post" class="row col-md-6 col-lg-4 p-4 bg-white rounded shadow mx-auto">
+        <% if (message) { %>
+            <p class="alert <%= message.type %>"><%= message.message %></p>
+        <% } %>    
+        <div class="mb-3">
+            <label for="email" class="form-label">Email:</label>
+            <input type="email" id="email" name="email" class="form-control" required/>
         </div>
-        <div class="form-group">
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password"/>
+        <div class="mb-3">
+            <label for="password" class="form-label">Password:</label>
+            <input type="password" id="password" name="password" class="form-control" required/>
         </div>
-        <button type="submit">Login</button>
-</form>
+        <button type="submit" class="btn btn-primary w-100">Login</button>
+    </form>
+</section>
+<section class="=col-12">
+    <div class="row col-md-6 col-lg-4 p-4 bg-white rounded shadow mx-auto">
+        <p>nog geen account?</p>
+    <a href="/register" ><button class="btn btn-primary w-100">Registreer</button></a>
+    </div>
+</section>
 
-        <a href="/register"><button>Registreer</button></a>
-
+<%-include ("partials/footer")%>
 
 

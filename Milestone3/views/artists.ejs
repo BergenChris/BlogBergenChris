@@ -4,9 +4,22 @@
     <input type="search" name="q" id="q" value="<%=q%>"/>
     <button type="submit">Zoek</button>
 </form>
-<% for (let i=0;i<data.length;i++) {%>
-    <figure><a href="/artist/<%=data[i].artist_info.id%>"><img src="<%=data[i].image_url%>" height="150px"><figcaption><%=data[i].artist%></figcaption></a></figure>
-<%}%>
-        
+<div class="container">
+    <div class="row">
+        <% for (let i=0; i<data.length; i++) { %>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+                <div class="card h-100 text-center">
+                    <a href="/artist/<%= data[i].artist_info.id %>">
+                        <img src="<%= data[i].image_url %>" class="card-img-top" style="height: 150px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title"><%= data[i].artist %></h5>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        <% } %>
+    </div>
+</div>
+
 
 <%-include ("partials/footer")%>

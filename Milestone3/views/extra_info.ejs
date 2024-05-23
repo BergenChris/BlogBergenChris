@@ -1,26 +1,38 @@
 <%-include ("partials/header")%>
-<form  method="POST">
-    <label for="q">Zoek op Artiest: </label>
-    <select  name="q">
-        <% for(let i=0;i<list.length;i++) {%>
-        <option value="<%=list[i]%>"><%=list[i]%></option>
-        <%}%>
-    </select>
-    <button type="submit">Zoek</button>
+<form method="POST" class="row g-3">
+    <div class="col-auto">
+        <label for="q" class="col-form-label">Zoek op Artiest:</label>
+    </div>
+    <div class="col-auto">
+        <select name="q" class="form-select">
+            <% for(let i=0; i<list.length; i++) { %>
+            <option value="<%= list[i] %>"><%= list[i] %></option>
+            <% } %>
+        </select>
+    </div>
+    <div class="col-auto">
+        <button type="submit" class="btn btn-primary">Zoek</button>
+    </div>
 </form>
-<h1><%=data.artist%></h1>
-<figure class="col-6 float-start" ><img class="img-fluid" src="<%=data.image_url%>" height="450px"></figure>
-<ul class="text-start col-6 float-end mx-auto">
-    <li>Echte naam: <%=data.artist_info.full_name%></li>
-    <li>Land: <%=data.artist_info.country%></li>
-    <li>Geboren op <%=data.artist_info.birthdate%></li>
-    <li>Albums:</li>
-    <ul>
-    <% for (let i=0;i<data.artist_info.albums.length;i++) {%>
-        <li><%=data.artist_info.albums[i]%></li>
-        <%}%>
-    </ul>
 
-</ul>
+<h1 class="text-center"><%= data.artist %></h1>
+
+<div class="row justify-content-center">
+    <figure class="col-6 float-start">
+        <img class="img-fluid" src="<%= data.image_url %>" alt="<%= data.artist %>" height="450px">
+    </figure>
+    <ul class="list-group col-md-6 float-end text-start border-0">
+        <li class="list-group-item ps-5 border-0">Echte naam: <%=data.artist_info.full_name%></li>
+        <li class="list-group-item ps-5 border-0">Land: <%=data.artist_info.country%></li>
+        <li class="list-group-item ps-5 border-0">Geboren op <%=data.artist_info.birthdate%></li>
+        <li class="list-group-item ps-5 border-0">Albums:</li>
+        <ul class="list-group-item ps-5 border-0">
+            <% for (let i=0;i<data.artist_info.albums.length;i++) {%>
+            <li class="list-group-item border-0"><%=data.artist_info.albums[i]%></li>
+            <% } %>
+        </ul>
+        
+</div>
+
 
 <%-include ("partials/footer")%>

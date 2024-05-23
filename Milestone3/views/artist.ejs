@@ -1,34 +1,48 @@
 <%-include ("partials/header")%>
-<form  method="POST">
-    <label for="q">Zoek op Artiest: </label>
-    <select  name="q">
-        <% for(let i=0;i<list.length;i++) {%>
-        <option value="<%=list[i]%>"><%=list[i]%></option>
-        <%}%>
-    </select>
-    <button type="submit">Zoek</button>
+<form method="POST" class="row g-3">
+    <div class="col-4">
+        <label for="q" class="col-form-label">Zoek op Artiest:</label>
+    </div>
+    <div class="col-6 ">
+        <select name="q" class="form-select">
+            <% for(let i=0; i<list.length; i++) { %>
+            <option value="<%= list[i] %>"><%= list[i] %></option>
+            <% } %>
+        </select>
+    </div>
+    <div class="col-2">
+        <button type="submit" class="btn btn-primary">Zoek</button>
+    </div>
 </form>
-<h1><%=data.artist%></h1>
-<figure class="col-6 float-start"><img class="img-fluid" src="<%=data.image_url%>" height="450px"></figure>
-<ul class="text-start col-6 float-end mx-auto">
-    <li>Jaar: <%=data.year%></li>
-    <li>Uitgebracht op <%=data.release_date%></li>
-    <li>Weken op nr 1 = <%=data.weeks_at_number_one%></li>
-    <li>Ook op nr 1 in het Verenigd Koninkrijk : <% if (data.number_1_in_UK == true) { %> Ja <%} else {%>Nee<%}%></li>
-    <li>Genre : <%=data.genre%></li>
-    <li>Andere hits:</li>
-    <ul>
-    <% for (let i=0;i<data.other_top_songs.length;i++) {%>
-    <li><%=data.other_top_songs[i]%></li>
-    <%}%>
-    </ul>
-    <li>Refrein :</li> 
-    <p><%=data.chorus%></p>
-    <button><a href="http://localhost:3000/artist/<%=data.artist_info.artistid%>/extra_info">Overige Info</a></button>
-    
 
-        
-</ul>
+<h1 class="text-center"><%= data.artist %></h1>
+
+<div class="row justify-content-center">
+    <figure class="col-6 float-start">
+        <img class="img-fluid" src="<%= data.image_url %>" alt="<%= data.artist %>" height="450px">
+    </figure>
+
+    <ul class="list-group col-md-6 float-end text-start border-0">
+        <li class="list-group-item ps-5 border-0">Jaar: <%= data.year %></li>
+        <li class="list-group-item ps-5 border-0">Uitgebracht op <%= data.release_date %></li>
+        <li class="list-group-item ps-5 border-0">Weken op nr 1 = <%= data.weeks_at_number_one %></li>
+        <li class="list-group-item ps-5 border-0">Ook op nr 1 in het Verenigd Koninkrijk: <% if (data.number_1_in_UK == true) { %> Ja <%} else {%> Nee <%} %></li>
+        <li class="list-group-item ps-5 border-0">Genre: <%= data.genre %></li>
+        <li class="list-group-item ps-5 border-0">Andere hits:</li>
+        <ul class="list-group-item ps-5 border-0">
+            <% for (let i=0; i<data.other_top_songs.length; i++) { %>
+            <li class="list-group-item border-0"><%= data.other_top_songs[i] %></li>
+            <% } %>
+        </ul>
+        <li class="list-group-item ps-5 border-0">Refrein:</li>
+        <p class="list-group-item ps-5 border-0"><%= data.chorus %></p>
+    </ul>
+    <button class="btn btn-secondary">
+        <a href="http://localhost:3000/artist/<%= data.artist_info.artistid %>/extra_info" class="text-decoration-none text-white">Overige Info</a>
+    </button>
+</div>  
+
+
 
 
 <%-include ("partials/footer")%>

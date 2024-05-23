@@ -1,20 +1,30 @@
 <%-include ("partials/header")%>
-<form action="/" method="get">
-    <select name="sortField">
-        <% for (let field of sortFields) { %>
-            <option value="<%= field.value %>" <%= field.selected %>><%= field.text %></option> 
-        <% } %>
-    </select>
-    <select name="sortDirection">
-        <% for (let direction of sortDirections) { %>
-            <option value="<%= direction.value %>" <%= direction.selected %>><%= direction.text %></option> 
-        <% } %>
-    </select>
-    <button type="submit">Sort</button>
+<form action="/" method="get" class="form-inline my-2">
+    <div class="row ">
+        <div class="col-md-5">
+            <select name="sortField" class="form-control mr-sm-2 text-center">
+                <% for (let field of sortFields) { %>
+                    <option value="<%= field.value %>" <%= field.selected ? 'selected' : '' %>><%= field.text %></option> 
+                <% } %>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary col-md-2 text-center">Sort</button>
+        <div class="col-md-5">
+            <select name="sortDirection" class="form-control mr-sm-2 text-center">
+                <% for (let direction of sortDirections) { %>
+                    <option value="<%= direction.value %>" <%= direction.selected ? 'selected' : '' %>><%= direction.text %></option> 
+                <% } %>
+            </select>
+        </div>
+        
+    </div>
 </form>
-<table>
+
+
+<table class="table table-striped">
     <thead>
         <tr>
+            <th>Link</th>
             <th>Artiest</th>
             <th>Titel</th>
             <th>Genre</th>
@@ -23,15 +33,20 @@
         </tr>
     </thead>
     <tbody>
-        <% for (let i=0;i<songs.length;i++) {%>
+        <% for (let song of songs) { %>
         <tr>
-            <td style="border: 1px solid black;text-align: center;"><a style="color:black;text-decoration: underline;" href="http://localhost:3000/artist/<%=songs[i].artist_info.id%>"><%=songs[i].artist%></a></td>
-            <td style="color:red ;border: 1px solid black;text-align: center;" ><%=songs[i].title%></td>
-            <td style="border: 1px solid black;text-align: center;"><%=songs[i].genre%></td>
-            <td style="border: 1px solid black;text-align: center;"><%=songs[i].weeks_at_number_one%></td>
-            <td style="border: 1px solid black;text-align: center;"><%=songs[i].year%></td>
+            <td style="text-align: center;vertical-align: middle;">
+                <a href="http://localhost:3000/artist/<%= song.artist_info.id %>">
+                    <img src="<%=song.image_url%>" style="max-width: 100px; max-height: 100px;" alt="<%= song.artist %>">
+                </a>
+            </td>
+            <td style="text-align: center;vertical-align: middle;"><%= song.artist %></td>
+            <td style="text-align: center;vertical-align: middle;"><%= song.title %></td>
+            <td style="text-align: center;vertical-align: middle;"><%= song.genre %></td>
+            <td style="text-align: center;vertical-align: middle;"><%= song.weeks_at_number_one %></td>
+            <td style="text-align: center;vertical-align: middle;"><%= song.year %></td>
         </tr>
-        <%}%>
+        <% } %>
     </tbody>
 </table>
 <%-include ("partials/footer")%>
