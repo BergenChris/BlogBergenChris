@@ -3,7 +3,7 @@
         "id": "1",
         "title": "Drivers License",
         "artist": "Olivia Rodrigo",
-        "image_url": "https://raw.githubusercontent.com/BergenChris/Milestone/main/Milestone1/images/Olivia_Rodrigo.jpg",	
+        "image_url": "https://raw.githubusercontent.com/BergenChris/Milestone/main/Milestone3/public/images/Olivia_Rodrigo.jpg",	
         "artist_info": {
           "artistid": "1",
           "full_name": "Olivia Isabel Rodrigo",
@@ -23,7 +23,7 @@
         "id": "2",
         "title": "Blinding Lights",
         "artist": "The Weeknd",
-        "image_url": "https://raw.githubusercontent.com/BergenChris/Milestone/main/Milestone1/images/The_Weeknd.jpg",
+        "image_url": "https://raw.githubusercontent.com/BergenChris/Milestone/main/Milestone3/public/images/The_Weeknd.jpg",
         "artist_info": {
           "artistid": "2",
           "full_name": "Abel Makkonen Tesfaye",
@@ -43,7 +43,7 @@
         "id": "3",
         "title": "Old Town Road",
         "artist": "Lil Nas X",
-        "image_url": "https://raw.githubusercontent.com/BergenChris/Milestone/main/Milestone1/images/Lil_Nas_X.png",
+        "image_url": "https://raw.githubusercontent.com/BergenChris/Milestone/main/Milestone3/public/images/Lil_Nas_X.png",
         "artist_info": {
           "artistid": "3",
           "full_name": "Montero Lamar Hill",
@@ -63,7 +63,7 @@
         "id": "4",
         "title": "God's Plan",
         "artist": "Drake",
-        "image_url": "https://raw.githubusercontent.com/BergenChris/Milestone/main/Milestone1/images/Drake.jpg",
+        "image_url": "https://raw.githubusercontent.com/BergenChris/Milestone/main/Milestone3/public/images/Drake.jpg",
         "artist_info": {
           "artistid": "4",
           "full_name": "Aubrey Drake Graham",
@@ -83,7 +83,7 @@
         "id": "5",
         "title": "Shape of You",
         "artist": "Ed Sheeran",
-        "image_url": "https://raw.githubusercontent.com/BergenChris/Milestone/main/Milestone1/images/Ed_Sheeran.jpg",
+        "image_url": "https://raw.githubusercontent.com/BergenChris/Milestone/main/Milestone3/public/images/Ed_Sheeran.jpg",
         "artist_info": {
           "artistid": "5",
           "full_name": "Edward Christopher Sheeran",
@@ -103,7 +103,7 @@
         "id": "6",
         "title": "Closer",
         "artist": "The Chainsmokers",
-        "image_url": "https://raw.githubusercontent.com/BergenChris/Milestone/main/Milestone1/images/The_Chainsmokers.jpg",
+        "image_url": "https://raw.githubusercontent.com/BergenChris/Milestone/main/Milestone3/public/images/The_Chainsmokers.jpg",
         "artist_info": {
           "artistid": "6",
           "full_name": "Andrew Taggart ",
@@ -123,7 +123,7 @@
         "id": "7",
         "title": "Can't Feel My Face",
         "artist": "The Weeknd",
-        "image_url": "https://raw.githubusercontent.com/BergenChris/Milestone/main/Milestone1/images/The_Weeknd.jpg",
+        "image_url": "https://raw.githubusercontent.com/BergenChris/Milestone/main/Milestone3/public/images/The_Weeknd.jpg",
         "artist_info": {
             "artistid": "7",
             "full_name": "Abel Makkonen Tesfaye",
@@ -143,7 +143,7 @@
         "id": "8",
         "title": "See You Again",
         "artist": "Wiz Khalifa",
-        "image_url": "https://raw.githubusercontent.com/BergenChris/Milestone/main/Milestone1/images/Wiz_Khalifa.jpg",
+        "image_url": "https://raw.githubusercontent.com/BergenChris/Milestone/main/Milestone3/public/images/Wiz_Khalifa.jpg",
         "artist_info": {
           "artistid": "8",
           "full_name": "Cameron Jibril Thomaz ",
@@ -163,7 +163,7 @@
         "id": "9",
         "title": "Uptown Funk",
         "artist": "Mark Ronson",
-        "image_url": "https://raw.githubusercontent.com/BergenChris/Milestone/main/Milestone1/images/Mark-Ronson.jpg",
+        "image_url": "https://raw.githubusercontent.com/BergenChris/Milestone/main/Milestone3/public/images/Mark-Ronson.jpg",
         "artist_info": {
           "artistid": "9",
           "full_name": "Mark Daniel Ronson,",
@@ -183,7 +183,7 @@
         "id": "10",
         "title": "Blank Space",
         "artist": "Taylor Swift",
-        "image_url": "https://raw.githubusercontent.com/BergenChris/Milestone/main/Milestone1/images/Taylor_Swift.png",
+        "image_url": "https://raw.githubusercontent.com/BergenChris/Milestone/main/Milestone3/public/images/Taylor_Swift.png",
         "artist_info": {
           "artistid": "10",
           "full_name": "Taylor Alison Swift",

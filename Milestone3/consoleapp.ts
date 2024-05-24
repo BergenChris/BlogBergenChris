@@ -9,6 +9,7 @@ async function importJson()
         return songlist;
     
 }
+
 importJson().then(songlist => 
 {
     console.log();
@@ -57,7 +58,7 @@ importJson().then(songlist =>
                 let found : boolean =false
                 for (let i:number=0;i<songlist.length;i++)
                 {
-                    if(songlist[i].id == parseInt(searchById))
+                    if(songlist[i].id == searchById)
                     {
                         found=true;
                         console.log("Id : "+songlist[i].id);
