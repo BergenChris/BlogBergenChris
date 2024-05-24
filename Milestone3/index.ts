@@ -41,11 +41,7 @@ app.get("/", secureMiddleware, async(req, res) =>
         const sortDirection = typeof req.query.sortDirection === "string" ? req.query.sortDirection : "a-z laag-hoog";
         let sortedSonglist=[...songlist].sort((a,b)=>
         {
-            if (sortField ==="id")
-            {
-                return sortDirection==="a-z laag-hoog"?a.id.localeCompare(b.id) : b.id.localeCompare(a.id);
-            }
-            else if (sortField ==="titel")
+            if (sortField ==="titel")
             {
                 return sortDirection==="a-z laag-hoog"?a.title.localeCompare(b.title) : b.title.localeCompare(a.title);
             }
@@ -83,7 +79,6 @@ app.get("/", secureMiddleware, async(req, res) =>
     
         const sortFields = 
         [
-            { value: 'id', text: 'Id', selected: sortField === 'id' ? 'selected' : ''},
             { value: 'artiest', text: 'Artiest', selected: sortField === 'artiest' ? 'selected' : ''},
             { value: 'titel', text: 'Titel', selected: sortField === 'titel' ? 'selected' : '' },
             { value: 'genre', text: 'Genre', selected: sortField === 'genre' ? 'selected' : ''},

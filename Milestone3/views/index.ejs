@@ -1,52 +1,75 @@
 <%-include ("partials/header")%>
 <form action="/" method="get" class="form-inline my-2">
-    <div class="row ">
-        <div class="col-md-5">
-            <select name="sortField" class="form-control mr-sm-2 text-center">
+    <div class="row">
+
+        <div class="col-12 col-md-5 mb-2 mb-md-0">
+            <select name="sortField" class="form-control text-center">
                 <% for (let field of sortFields) { %>
                     <option value="<%= field.value %>" <%= field.selected ? 'selected' : '' %>><%= field.text %></option> 
                 <% } %>
             </select>
         </div>
-        <button type="submit" class="btn btn-primary col-md-2 text-center">Sort</button>
-        <div class="col-md-5">
-            <select name="sortDirection" class="form-control mr-sm-2 text-center">
+
+        <div class="col-12 col-md-2 mb-2 mb-md-0 text-center">
+            <button type="submit" class="btn btn-primary btn-block">Sort</button>
+        </div>
+
+        <div class="col-12 col-md-5 mb-2 mb-md-0">
+            <select name="sortDirection" class="form-control text-center">
                 <% for (let direction of sortDirections) { %>
                     <option value="<%= direction.value %>" <%= direction.selected ? 'selected' : '' %>><%= direction.text %></option> 
                 <% } %>
             </select>
         </div>
-        
     </div>
 </form>
+<div class="table-responsive">
+    <table class="table table-striped">
+            <thead class="d-md-table-header">
+                <tr>
+                    <th>Link</th>
+                    <th>Artiest</th>
+                    <th>Titel</th>
+                    <th>Genre</th>
+                    <th>Weken nr1</th>
+                    <th>Jaar</th>
+                </tr>
+            </thead>
+        <tbody>
+            <% for (let song of songs) { %>
+            <tr class="d-none d-md-table-row">
+                <td style="text-align: center; vertical-align: middle;">
+                    <a href="/artist/<%= song.artist_info.id %>">
+                        <img src="<%= song.image_url %>" style="max-width: 100px; max-height: 100px;" alt="<%= song.artist %>">
+                    </a>
+                </td>
+                <td style="text-align: center; vertical-align: middle;"><%= song.artist %></td>
+                <td style="text-align: center; vertical-align: middle;"><%= song.title %></td>
+                <td style="text-align: center; vertical-align: middle;"><%= song.genre %></td>
+                <td style="text-align: center; vertical-align: middle;"><%= song.weeks_at_number_one %></td>
+                <td style="text-align: center; vertical-align: middle;"><%= song.year %></td>
+            </tr>
+            <!-- Mobile view: Combine columns -->
+            <tr class="d-md-none">
+                <td colspan="6" style="text-align: center; vertical-align: middle;">
+                    <div class="row">
+                        <div class="col-12">
+                            <a href="/artist/<%= song.artist_info.id %>">
+                                <img src="<%= song.image_url %>" style="max-width: 100px; max-height: 100px;" alt="<%= song.artist %>">
+                            </a>
+                        </div>
+                        <div class="col-12"><strong>Artiest:</strong> <%= song.artist %></div>
+                        <div class="col-12"><strong>Titel:</strong> <%= song.title %></div>
+                        <div class="col-12"><strong>Genre:</strong> <%= song.genre %></div>
+                        <div class="col-12"><strong>Weken nr1:</strong> <%= song.weeks_at_number_one %></div>
+                        <div class="col-12"><strong>Jaar:</strong> <%= song.year %></div>
+                    </div>
+                </td>
+            </tr>
+            <% } %>
+        </tbody>
+    </table>
+</div>
 
 
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th>Link</th>
-            <th>Artiest</th>
-            <th>Titel</th>
-            <th>Genre</th>
-            <th>Weken nr1</th>
-            <th>Jaar</th>
-        </tr>
-    </thead>
-    <tbody>
-        <% for (let song of songs) { %>
-        <tr>
-            <td style="text-align: center;vertical-align: middle;">
-                <a href="/artist/<%= song.artist_info.id %>">
-                    <img src="<%=song.image_url%>" style="max-width: 100px; max-height: 100px;" alt="<%= song.artist %>">
-                </a>
-            </td>
-            <td style="text-align: center;vertical-align: middle;"><%= song.artist %></td>
-            <td style="text-align: center;vertical-align: middle;"><%= song.title %></td>
-            <td style="text-align: center;vertical-align: middle;"><%= song.genre %></td>
-            <td style="text-align: center;vertical-align: middle;"><%= song.weeks_at_number_one %></td>
-            <td style="text-align: center;vertical-align: middle;"><%= song.year %></td>
-        </tr>
-        <% } %>
-    </tbody>
-</table>
 <%-include ("partials/footer")%>
