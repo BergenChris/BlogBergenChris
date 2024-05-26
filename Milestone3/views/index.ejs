@@ -39,7 +39,7 @@
             <% for (let song of songs) { %>
             <tr class="d-none d-md-table-row">
                 <td style="text-align: center; vertical-align: middle;">
-                    <a href="/artist/<%= song.artist_info.id %>">
+                    <a href="/artist/<%=song.id %>">
                         <img src="<%= song.image_url %>" style="max-width: 100px; max-height: 100px;" alt="<%= song.artist %>">
                     </a>
                 </td>
@@ -54,7 +54,7 @@
                 <td colspan="6" style="text-align: center; vertical-align: middle;">
                     <div class="row">
                         <div class="col-12">
-                            <a href="/artist/<%= song.artist_info.id %>">
+                            <a href="/artist/<%=song.id %>">
                                 <img src="<%= song.image_url %>" style="max-width: 100px; max-height: 100px;" alt="<%= song.artist %>">
                             </a>
                         </div>
